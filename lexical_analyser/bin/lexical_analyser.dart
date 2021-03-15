@@ -1,14 +1,4 @@
-class Token<Type, Value> {
-  final Type type;
-  final Value value;
-
-  const Token(this.type, this.value);
-
-  @override
-  String toString() {
-    return 'Token($type,$value)';
-  }
-}
+import 'token.dart';
 
 class LexicalAnalyser {
   final String input;
@@ -192,12 +182,4 @@ class LexicalAnalyser {
             'PLUS': (String type, String value) =>
                 Token<String, String>(type, value),
           };
-}
-
-// concatenar todos os números
-// resolver todos os * e / da esquerda para direita
-// resolver todos os + e - da esquerda para direita
-
-void main() {
-  print(LexicalAnalyser('   15 + 1   +   5 \n  /5  +   0 + 6').calc());
 }
